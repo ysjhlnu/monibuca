@@ -49,6 +49,7 @@ require (
 	github.com/google/pprof v0.0.0-20230912144702-c363fe2c2ed8 // indirect
 	github.com/google/uuid v1.3.1 // indirect
 	github.com/husanpao/ip v0.0.0-20220711082147-73160bb611a8 // indirect
+	github.com/logrusorgru/aurora v2.0.3+incompatible // indirect
 	github.com/logrusorgru/aurora/v4 v4.0.0 // indirect
 	github.com/lufia/plan9stats v0.0.0-20230326075908-cb1d2100619a // indirect
 	github.com/marten-seemann/qpack v0.3.0 // indirect
@@ -104,3 +105,7 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	m7s.live/plugin/ps/v4 v4.1.3-0.20230912044242-63d3268148f7 // indirect
 )
+
+replace m7s.live/engine/v4 => /Users/ts/code/go/github.com/ysjhlnu/engine
+
+replace m7s.live/plugin/gb28181/v4 => /Users/ts/code/go/github.com/ysjhlnu/plugin-gb28181

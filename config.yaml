@@ -10,3 +10,48 @@ hls:
   enable: false
 monitor:
   enable: false
+
+gb28181:
+  mysqlhost: "127.0.0.1:3307"
+  mysqluser: "root"
+  mysqlpassword: "123456"
+  invitemode:     0 #0、手动invite 1、表示自动发起invite，当Server（SIP）接收到设备信息时，立即向设备发送invite命令获取流,2、按需拉流，既等待订阅者触发
+  position:
+    autosubposition: false #是否自动订阅定位
+    expires: 3600s #订阅周期(单位：秒)，默认3600
+    interval: 6s #订阅间隔（单位：秒），默认6
+  udpcachesize:   0 #表示UDP缓存大小，默认为0，不开启。仅当TCP关闭，切缓存大于0时才开启
+  sipip:          "" #sip服务器地址 默认 自动适配设备网段
+  serial:         "340200000020000001"
+  realm:          "34020000"
+  username:       ""
+  password:       "123456"
+
+  registervalidity:  60s #注册有效期
+
+  mediaip:          "" #媒体服务器地址 默认 自动适配设备网段
+  port:
+    sip: udp:15060 #sip服务器端口
+  #    media: tcp:58200-59200 #媒体服务器端口，用于接收设备的流
+
+  removebaninterval: 10m #定时移除注册失败的设备黑名单，单位秒，默认10分钟（600秒）
+  loglevel:         info
+
+global:
+  disableall: false # 是否禁用所有插件
+  loglang: zh # 日志语言，可选值：zh,en
+  loglevel: debug # 日志级别，可选值：debug,info,warn,error,panic,fatal
+  http:
+    listenaddr: :8080 # 网关地址，用于访问API
+    listenaddrtls: :8443  # 用于HTTPS方式访问API的端口配置
+    certfile: ""
+    keyfile: ""
+    cors: true  # 是否自动添加cors头
+    username: ""  # 用户名和密码，用于API访问时的基本身份认证
+    password: ""
+    readtimeout: 0 # 读超时时间
+    writetimeout: 0 # 写超时时间
+    idletimeout: 0 # 空闲超时时间
+  console:
+    server: localhost:44944
+    secret: e10adc3949ba59abbe56e057f20f883e
